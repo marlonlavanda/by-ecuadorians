@@ -6,6 +6,7 @@ export const POST_FIELDS = `
     excerpt
     title
     slug
+    uri
     categories {
       nodes {
         databaseId

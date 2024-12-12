@@ -1,4 +1,4 @@
-export default async function Archive({
+export default async function Ecuatoriano({
   params,
 }: {
   params: { slug: string };

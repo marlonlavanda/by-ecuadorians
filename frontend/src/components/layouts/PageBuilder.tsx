@@ -1,4 +1,3 @@
-import SummaryCollage from "./SummaryCollage";
 import { BannerCarousel } from "./BannerCarousel";
 function PageBuilder({ layouts }: { layouts: any }) {
   if (!layouts) {

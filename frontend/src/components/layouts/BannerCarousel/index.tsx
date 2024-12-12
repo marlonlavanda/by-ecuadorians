@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
 
 import {
@@ -10,13 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/Carousel";
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/Card";
+
 import { AspectRatio } from "@/components/ui/AspectRatio";
 import { HighlightedPost } from "@/lib/types";
 
@@ -60,12 +55,14 @@ export const BannerCarousel = ({ highlightedPosts }: BannerCarouselProps) => {
                         {banner.categories.nodes[0].name}
                       </h6>
                     )}
-                    <h2>{banner.title}</h2>
+                    <Link href={`/ecuatoriano/${banner.slug}`}>
+                      <h2>{banner.title}</h2>
+                    </Link>
                     {banner.excerpt && (
-                      <p
+                      <div
                         className="wysiwyg"
                         dangerouslySetInnerHTML={{ __html: banner.excerpt }}
-                      ></p>
+                      ></div>
                     )}
                   </div>
                 </div>
