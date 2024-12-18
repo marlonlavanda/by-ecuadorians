@@ -55,7 +55,7 @@ export const BannerCarousel = ({ highlightedPosts }: BannerCarouselProps) => {
                         {banner.categories.nodes[0].name}
                       </h6>
                     )}
-                    <Link href={`/ecuatoriano/${banner.slug}`}>
+                    <Link href={`/ecuatorianos/${banner.slug}`}>
                       <h2>{banner.title}</h2>
                     </Link>
                     {banner.excerpt && (

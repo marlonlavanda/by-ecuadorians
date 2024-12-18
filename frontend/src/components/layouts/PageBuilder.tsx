@@ -1,7 +1,14 @@
 import { BannerCarousel } from "./BannerCarousel";
 function PageBuilder({ layouts }: { layouts: any }) {
   if (!layouts) {
-    return <p>No layouts found</p>;
+    return (
+      <section className="section">
+        <div className="container">
+          <h4>Oops!</h4>
+          <h1>No layouts found</h1>
+        </div>
+      </section>
+    );
   }
 
   return (

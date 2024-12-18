@@ -79,3 +79,18 @@ export interface BannerCarouselFragment {
   };
   fieldGroupName: string;
 }
+
+export interface Post {
+  slug: string;
+  databaseId: string;
+  content: string;
+  title: string;
+  excerpt?: string;
+  featuredImage: FeaturedImage;
+  categories: {
+    nodes: Array<Category>;
+  };
+  pageBuilderFields: {
+    layouts: Array<BannerCarouselFragment>;
+  };
+}

@@ -1,15 +1,34 @@
 import { fetchGraphQL } from "@/lib/functions";
-import { Page } from "@/lib/types";
+import { Post } from "@/lib/types";
 import { BANNER_CAROUSEL_FIELDS } from "@/lib/fragments";
+
 /**
  * Fetch a page by slug.
  */
-export default async function getPageBySlug(slug: string) {
+export default async function getPostBySlug(slug: string) {
   const query = `
-    query GetPageBySlug($slug: ID = "URI") {
-      page(id: $slug, idType: URI) {
+    query GetPost($slug: ID!) {
+      post(id: $slug, idType: SLUG) {
         databaseId
         content
+        slug
+        title
+        excerpt
+        featuredImage {
+          node {
+            databaseId
+            sourceUrl
+            uri
+            altText
+          }
+        }
+        categories {
+          nodes {
+            databaseId
+            name
+            slug
+          }
+        }
         pageBuilderFields {
           layouts {
             fieldGroupName
@@ -29,5 +48,5 @@ export default async function getPageBySlug(slug: string) {
 
   const response = await fetchGraphQL(query, variables);
 
-  return response.data.page as Page;
+  return response.data.post as Post;
 }
