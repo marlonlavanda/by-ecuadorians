@@ -14,6 +14,11 @@ const nextConfig = {
         hostname: "wp.dev.the-company.com",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "remezcla.com",
+        pathname: "**",
+      },
     ],
   },
 };
