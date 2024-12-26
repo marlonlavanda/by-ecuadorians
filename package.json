@@ -1,0 +1,22 @@
+{
+  "name": "by-ecuadorians",
+  "version": "1.0.0",
+  "description": "**byecuadorians** is a platform showcasing the stories of Ecuadorians making an impact around the world. The project is built using a headless WordPress CMS as the backend and a modern **Next.js** frontend. As the platform grows, we plan to introduce microservices to handle user authentication, real-time messaging, notifications, and more.",
+  "main": "index.js",
+  "workspaces": [
+    "frontend/*",
+    "cms/*",
+    "shared/*",
+    "services/*"
+  ],
+  "scripts": {
+    "co": "sui-mono commit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@s-ui/mono": "^2.45.0"
+  }
+}
