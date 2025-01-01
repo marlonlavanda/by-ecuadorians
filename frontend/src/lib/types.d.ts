@@ -50,6 +50,11 @@ export interface Category {
   name: string;
   slug: string;
 }
+export interface EcuadorianCategory extends Category {
+  databaseId: string;
+  name: string;
+  slug: string;
+}
 
 export interface FeaturedImage {
   node: {
@@ -94,3 +99,5 @@ export interface Post {
     layouts: Array<BannerCarouselFragment>;
   };
 }
+
+export interface Ecuadorian extends Post {}

@@ -3,9 +3,11 @@ export default async function Archive({
 }: {
   params: { slug: string };
 }) {
+  const { slug } = await params;
+
   return (
     <div>
-      <h1>{params?.slug}</h1>
+      <h1>{slug}</h1>
     </div>
   );
 }

@@ -36,7 +36,7 @@
                 "id": ""
             },
             "post_type": [
-                "post"
+                "ecuadorian"
             ],
             "post_status": [
                 "publish"
@@ -106,5 +106,5 @@
     "graphql_field_name": "componentBannerCarousel",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1735244245
+    "modified": 1735294105
 }
