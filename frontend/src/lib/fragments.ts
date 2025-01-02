@@ -1,5 +1,5 @@
-export const POST_FIELDS = `
-  fragment PostFields on Ecuadorian {
+export const ECUADORIAN_FIELDS = `
+  fragment EcuadorianFields on Ecuadorian {
     id
     content(format: RAW)
     databaseId
@@ -33,10 +33,10 @@ export const BANNER_CAROUSEL_FIELDS = `
         slug
         uri
         ... on Ecuadorian {
-          ...PostFields
+          ...EcuadorianFields
         }
       }
     }
   }
-  ${POST_FIELDS}
+  ${ECUADORIAN_FIELDS}
 `;

@@ -2,7 +2,6 @@ import getPostBySlug from "@/lib/queries/getPostBySlug";
 import PageBuilder from "@/components/layouts/PageBuilder";
 import PersonHeroBanner from "@/components/layouts/PersonHeroBanner";
 import PersonTabDetails from "@/components/layouts/PersonTabDetails";
-import CareerHighlights from "@/components/layouts/CareerHighlights";
 import ProfileAccordion from "@/components/layouts/ProfileAccordion";
 export default async function Ecuatoriano({
   params,
@@ -29,7 +28,6 @@ export default async function Ecuatoriano({
         categories={postDetails?.categories}
       />
       <PersonTabDetails />
-      <CareerHighlights />
       <ProfileAccordion />
       <PageBuilder layouts={postDetails?.pageBuilderFields?.layouts} />
     </div>

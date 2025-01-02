@@ -19,6 +19,21 @@ const nextConfig = {
         hostname: "remezcla.com",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "codiscos-web-prd-files.panterweb.co",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.ecuadortimes.net",
+        pathname: "**",
+      },
     ],
   },
 };
