@@ -1,4 +1,5 @@
 import { BannerCarousel } from "./BannerCarousel";
+import { PersonTabDetails } from "@/components/layouts/PersonTabDetails";
 function PageBuilder({ layouts }: { layouts: any }) {
   if (!layouts) {
     return (
@@ -26,9 +27,11 @@ function PageBuilder({ layouts }: { layouts: any }) {
             return (
               <BannerCarousel
                 key={index}
-                highlightedPosts={layout.highlightedPosts}
+                highlightedPosts={layout?.highlightedPosts}
               />
             );
+          case "PageBuilderFieldsLayoutsBiographyTabsLayout":
+            return <PersonTabDetails key={index} />;
           default:
             return null;
         }

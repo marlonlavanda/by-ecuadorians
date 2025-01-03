@@ -1,10 +1,11 @@
 import Image from "next/image";
 
-import { Card, CardHeader, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/components/ui/Card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/Tabs";
 import { Separator } from "@/components/ui/Separator";
 import { AspectRatio } from "@/components/ui/AspectRatio";
-export default function PersonTabDetails() {
+
+export const PersonTabDetails = () => {
   return (
     <section className="section">
       <div className="container">
@@ -102,4 +103,4 @@ export default function PersonTabDetails() {
       </div>
     </section>
   );
-}
+};

@@ -1,13 +1,17 @@
 import { fetchGraphQL } from "@/lib/functions";
 import { Ecuadorian } from "@/lib/types";
-import { BANNER_CAROUSEL_FIELDS } from "@/lib/fragments";
+import {
+  PAGE_BUILDER_FIELDS_FRAGMENT,
+  BANNER_CAROUSEL_FRAGMENT,
+  BIOGRAPHY_TAB_FRAGMENT,
+} from "@/lib/fragments";
 
 /**
  * Fetch a page by slug.
  */
 export default async function getEcuadorianBySlug(slug: string) {
   const query = `
-    query getEcuadorianBySlug($slug: ID!) {
+    query getEcuadorianBySlug($slug: ID = "URI") {
       ecuadorian(id: $slug, idType: SLUG) {
         databaseId
         content
@@ -30,16 +34,13 @@ export default async function getEcuadorianBySlug(slug: string) {
           }
         }
         pageBuilderFields {
-          layouts {
-            fieldGroupName
-            ... on PageBuilderFieldsLayoutsBannerCarouselLayout {
-              ...BannerCarouselFields
-            }
-          }
+          ...PageBuilderFieldsFragment
         }
       }
     }
-    ${BANNER_CAROUSEL_FIELDS}
+    ${PAGE_BUILDER_FIELDS_FRAGMENT}
+    ${BANNER_CAROUSEL_FRAGMENT}
+    ${BIOGRAPHY_TAB_FRAGMENT}
   `;
 
   const variables = {

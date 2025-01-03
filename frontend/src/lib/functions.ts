@@ -30,9 +30,6 @@ export async function fetchGraphQL<T = any>(
       headers["Authorization"] = `Bearer ${refreshToken}`;
     }
 
-    // Get the slug.
-    // const slug = variables?.slug || variables?.id || 'graphql'
-
     // Fetch data from external API.
     const response = await fetch(graphqlUrl, {
       method: "POST",
@@ -63,7 +60,7 @@ export async function fetchGraphQL<T = any>(
     }
 
     // Finally, return the data.
-    return data;
+    return data as GraphQLResponse<T>;
   } catch (error) {
     console.error(error);
     throw error;

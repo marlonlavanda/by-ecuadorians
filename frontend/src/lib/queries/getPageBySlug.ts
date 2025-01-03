@@ -1,6 +1,10 @@
 import { fetchGraphQL } from "@/lib/functions";
 import { Page } from "@/lib/types";
-import { BANNER_CAROUSEL_FIELDS } from "@/lib/fragments";
+import {
+  PAGE_BUILDER_FIELDS_FRAGMENT,
+  BANNER_CAROUSEL_FRAGMENT,
+  BIOGRAPHY_TAB_FRAGMENT,
+} from "@/lib/fragments";
 /**
  * Fetch a page by slug.
  */
@@ -11,16 +15,13 @@ export default async function getPageBySlug(slug: string) {
         databaseId
         content
         pageBuilderFields {
-          layouts {
-            fieldGroupName
-            ... on PageBuilderFieldsLayoutsBannerCarouselLayout {
-              ...BannerCarouselFields
-            }
-          }
+          ...PageBuilderFieldsFragment
         }
       }
     }
-    ${BANNER_CAROUSEL_FIELDS}
+    ${PAGE_BUILDER_FIELDS_FRAGMENT}
+    ${BANNER_CAROUSEL_FRAGMENT}
+    ${BIOGRAPHY_TAB_FRAGMENT}
   `;
 
   const variables = {

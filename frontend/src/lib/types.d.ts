@@ -85,6 +85,24 @@ export interface BannerCarouselFragment {
   fieldGroupName: string;
 }
 
+type BiographyTabContent = {
+  content: string;
+  image: FeaturedImage;
+};
+
+type BiographyTab = {
+  tabTitle: string;
+  tabContent: Array<BiographyTabContent>;
+};
+export interface BiographyTabsFragment {
+  addTab: Array<BiographyTab>;
+  fieldGroupName: string;
+  marginBottom: string;
+  marginTop: string;
+  paddingBottom: string;
+  paddingTop: string;
+}
+
 export interface Post {
   slug: string;
   databaseId: string;
@@ -95,9 +113,9 @@ export interface Post {
   categories: {
     nodes: Array<Category>;
   };
-  pageBuilderFields: {
-    layouts: Array<BannerCarouselFragment>;
+  pageBuilderFields?: {
+    layouts?: Array<BannerCarouselFragment | BiographyTabsFragment>;
   };
 }
 
-export interface Ecuadorian extends Post {}
+export type Ecuadorian = Post;

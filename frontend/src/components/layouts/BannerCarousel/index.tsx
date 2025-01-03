@@ -22,7 +22,6 @@ type BannerCarouselProps = {
 };
 
 export const BannerCarousel = ({ highlightedPosts }: BannerCarouselProps) => {
-  console.log("highlightedPosts", highlightedPosts);
   return (
     <div className="section">
       <div className="container overflow-hidden">

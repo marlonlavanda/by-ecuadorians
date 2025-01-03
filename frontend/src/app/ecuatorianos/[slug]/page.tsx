@@ -1,7 +1,6 @@
-import getPostBySlug from "@/lib/queries/getPostBySlug";
+import getEcuadorianBySlug from "@/lib/queries/getEcuadorianBySlug";
 import PageBuilder from "@/components/layouts/PageBuilder";
 import PersonHeroBanner from "@/components/layouts/PersonHeroBanner";
-import PersonTabDetails from "@/components/layouts/PersonTabDetails";
 import ProfileAccordion from "@/components/layouts/ProfileAccordion";
 export default async function Ecuatoriano({
   params,
@@ -10,9 +9,9 @@ export default async function Ecuatoriano({
 }) {
   const { slug } = await params;
 
-  const postDetails = await getPostBySlug(slug);
-
-  if (!postDetails) {
+  const ecuadorianDetails = await getEcuadorianBySlug(slug);
+  console.log(ecuadorianDetails);
+  if (!ecuadorianDetails) {
     return (
       <div>
         <h1>Not content Found</h1>
@@ -23,13 +22,11 @@ export default async function Ecuatoriano({
   return (
     <div className="ecuatorianos-page-template">
       <PersonHeroBanner
-        title={postDetails?.title}
-        featuredImage={postDetails?.featuredImage}
-        categories={postDetails?.categories}
+        title={ecuadorianDetails?.title}
+        featuredImage={ecuadorianDetails?.featuredImage}
+        categories={ecuadorianDetails?.categories}
       />
-      <PersonTabDetails />
-      <ProfileAccordion />
-      <PageBuilder layouts={postDetails?.pageBuilderFields?.layouts} />
+      <PageBuilder layouts={ecuadorianDetails?.pageBuilderFields?.layouts} />
     </div>
   );
 }
