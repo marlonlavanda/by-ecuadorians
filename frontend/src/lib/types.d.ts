@@ -85,18 +85,17 @@ export interface BannerCarouselFragment {
   fieldGroupName: string;
 }
 
-type BiographyTabContent = {
+export type BiographyTabContent = {
   content: string;
   image: FeaturedImage;
 };
 
-type BiographyTab = {
+export type BiographyTab = {
   tabTitle: string;
   tabContent: Array<BiographyTabContent>;
 };
 export interface BiographyTabsFragment {
   addTab: Array<BiographyTab>;
-  fieldGroupName: string;
   marginBottom: string;
   marginTop: string;
   paddingBottom: string;

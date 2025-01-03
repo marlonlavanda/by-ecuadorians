@@ -10,7 +10,6 @@ export default async function Ecuatoriano({
   const { slug } = await params;
 
   const ecuadorianDetails = await getEcuadorianBySlug(slug);
-  console.log(ecuadorianDetails);
   if (!ecuadorianDetails) {
     return (
       <div>

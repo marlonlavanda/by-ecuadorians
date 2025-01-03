@@ -4,8 +4,17 @@ import { Card, CardContent } from "@/components/ui/Card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/Tabs";
 import { Separator } from "@/components/ui/Separator";
 import { AspectRatio } from "@/components/ui/AspectRatio";
+import { BiographyTabsFragment } from "@/lib/types";
 
-export const PersonTabDetails = () => {
+type PersonTabDetailsProps = BiographyTabsFragment;
+
+export const PersonTabDetails = ({
+  addTab,
+  paddingTop,
+  paddingBottom,
+  marginTop,
+  marginBottom,
+}: PersonTabDetailsProps) => {
   return (
     <section className="section">
       <div className="container">
@@ -16,89 +25,40 @@ export const PersonTabDetails = () => {
           </p>
         </div>
         <Separator className="my-4" />
-        <Tabs defaultValue="overview">
+        <Tabs defaultValue={addTab[0].tabTitle}>
           <TabsList>
-            <TabsTrigger value="overview">Niñez</TabsTrigger>
-            <TabsTrigger value="password">Carrera</TabsTrigger>
-            <TabsTrigger value="death">Muerte</TabsTrigger>
+            {addTab.map((tab) => (
+              <TabsTrigger value={tab.tabTitle}>{tab.tabTitle}</TabsTrigger>
+            ))}
           </TabsList>
-          <TabsContent value="overview">
-            <Card>
-              <CardContent className="p-4 pt-4 flex flex-row">
-                <div className="w-1/2">
-                  <AspectRatio ratio={18 / 8}>
-                    <Image
-                      src="https://remezcla.com//wp-content/uploads/2018/09/jaramillo-918f07e42285bcdb63bb698f6b9c3d67-1200x800-1024x683.jpg"
-                      alt="Jaramillo"
-                      fill
-                      className="object-cover object-top rounded-tl-md"
-                    />
-                  </AspectRatio>
-                </div>
-                <div className="w-1/2 pl-6">
-                  <div className="wysiwyg">
-                    <p>
-                      Sidebars are one of the most complex components to build.
-                      They are central to any application and often contain a
-                      lot of moving parts.
-                    </p>
-                    <p>
-                      I don’t like building sidebars. So I built 30+ of them.
-                      All kinds of configurations. Then I extracted the core
-                      components into sidebar.tsx.
-                    </p>
-                    <p>
-                      I don’t like building sidebars. So I built 30+ of them.
-                      All kinds of configurations. Then I extracted the core
-                      components into sidebar.tsx.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          <TabsContent value="password">
-            <Card>
-              <CardContent className="p-4 pt-4 flex flex-row">
-                <div className="w-1/2">
-                  <AspectRatio ratio={18 / 8}>
-                    <Image
-                      src="https://remezcla.com//wp-content/uploads/2018/09/jaramillo-918f07e42285bcdb63bb698f6b9c3d67-1200x800-1024x683.jpg"
-                      alt="Jaramillo"
-                      fill
-                      className="object-cover object-top rounded-tl-md"
-                    />
-                  </AspectRatio>
-                </div>
-                <div className="w-1/2 pl-6">
-                  <div className="wysiwyg">
-                    <h2>Carrera Profesional</h2>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          <TabsContent value="death">
-            <Card>
-              <CardContent className="p-4 pt-4 flex flex-row">
-                <div className="w-1/2">
-                  <AspectRatio ratio={18 / 8}>
-                    <Image
-                      src="https://remezcla.com//wp-content/uploads/2018/09/jaramillo-918f07e42285bcdb63bb698f6b9c3d67-1200x800-1024x683.jpg"
-                      alt="Jaramillo"
-                      fill
-                      className="object-cover object-top rounded-tl-md"
-                    />
-                  </AspectRatio>
-                </div>
-                <div className="w-1/2 pl-6">
-                  <div className="wysiwyg">
-                    <h2>Muerte</h2>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
+          {addTab.map((tab) => (
+            <TabsContent value={tab.tabTitle}>
+              <Card>
+                <CardContent className="p-4 pt-4 ">
+                  {tab.tabContent.map((item) => (
+                    <div className="flex flex-row">
+                      <div className="w-1/2">
+                        <AspectRatio ratio={1 / 1}>
+                          <Image
+                            src={item.image.node.sourceUrl}
+                            alt={item.image.node.altText}
+                            fill
+                            className="object-cover object-top rounded-tl-md"
+                          />
+                        </AspectRatio>
+                      </div>
+                      <div className="w-1/2 pl-6">
+                        <div
+                          className="wysiwyg"
+                          dangerouslySetInnerHTML={{ __html: item.content }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+            </TabsContent>
+          ))}
         </Tabs>
       </div>
     </section>

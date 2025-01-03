@@ -31,7 +31,16 @@ function PageBuilder({ layouts }: { layouts: any }) {
               />
             );
           case "PageBuilderFieldsLayoutsBiographyTabsLayout":
-            return <PersonTabDetails key={index} />;
+            return (
+              <PersonTabDetails
+                key={index}
+                addTab={layout?.addTab}
+                paddingBottom={layout?.paddingBottom}
+                paddingTop={layout?.paddingTop}
+                marginBottom={layout?.marginBottom}
+                marginTop={layout?.marginTop}
+              />
+            );
           default:
             return null;
         }
