@@ -95,11 +95,13 @@ export type BiographyTab = {
   tabContent: Array<BiographyTabContent>;
 };
 export interface BiographyTabsFragment {
+  headingTitle?: string;
+  headingSubtitle?: string;
   addTab: Array<BiographyTab>;
-  marginBottom: string;
-  marginTop: string;
-  paddingBottom: string;
-  paddingTop: string;
+  paddingTop?: "xs" | "sm" | "md" | "lg" | "xl";
+  paddingBottom?: "xs" | "sm" | "md" | "lg" | "xl";
+  marginTop?: "xs" | "sm" | "md" | "lg" | "xl";
+  marginBottom?: "xs" | "sm" | "md" | "lg" | "xl";
 }
 
 export interface Post {

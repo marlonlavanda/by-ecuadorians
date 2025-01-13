@@ -48,6 +48,8 @@ export const BANNER_CAROUSEL_FRAGMENT = `
 
 export const BIOGRAPHY_TAB_FRAGMENT = `
   fragment BiographyTabFragment on PageBuilderFieldsLayoutsBiographyTabsLayout {
+    headingTitle
+    headingSubtitle
     addTab {
       tabTitle
       tabContent {

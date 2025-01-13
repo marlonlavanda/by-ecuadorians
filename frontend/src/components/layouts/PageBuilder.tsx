@@ -34,6 +34,8 @@ function PageBuilder({ layouts }: { layouts: any }) {
             return (
               <PersonTabDetails
                 key={index}
+                headingTitle={layout?.headingTitle}
+                headingSubtitle={layout?.headingSubtitle}
                 addTab={layout?.addTab}
                 paddingBottom={layout?.paddingBottom}
                 paddingTop={layout?.paddingTop}
