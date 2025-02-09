@@ -49,6 +49,39 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_677687b708044": {
+                    "key": "layout_677687b708044",
+                    "name": "biography_tabs",
+                    "label": "Biography Tabs",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_677687c308047",
+                            "label": "Biography Tab Fields",
+                            "name": "biography_tab_fields",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "graphql_field_name": "biographyTabFields",
+                            "clone": [
+                                "group_6776805a2c1bd"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -103,5 +136,5 @@
     "graphql_field_name": "PageBuilderFields",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1735294543
+    "modified": 1735862206
 }

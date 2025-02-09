@@ -1,0 +1,414 @@
+{
+    "key": "group_66609ba2c3fdb",
+    "title": "Reusable Fields",
+    "fields": [
+        {
+            "key": "field_66609ba24839d",
+            "label": "Padding Top",
+            "name": "padding_top",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "xs": "Extra Small",
+                "sm": "Small",
+                "md": "Medium",
+                "lg": "Large",
+                "xl": "Extra Large"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 1,
+            "ui": 1,
+            "ajax": 0,
+            "show_in_graphql": 1,
+            "graphql_description": "",
+            "graphql_field_name": "paddingTop",
+            "graphql_non_null": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_66609d344839e",
+            "label": "Padding Bottom",
+            "name": "padding_bottom",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "xs": "Extra Small",
+                "sm": "Small",
+                "md": "Medium",
+                "lg": "Large",
+                "xl": "Extra Large"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 1,
+            "ui": 1,
+            "ajax": 0,
+            "show_in_graphql": 1,
+            "graphql_description": "",
+            "graphql_field_name": "paddingBottom",
+            "graphql_non_null": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_66609d9f4839f",
+            "label": "Padding Options",
+            "name": "padding_options",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_66609ba24839d",
+                "field_66609d344839e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_66609df1483a1",
+            "label": "Margin Top",
+            "name": "margin_top",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "xs": "Extra Small",
+                "sm": "Small",
+                "md": "Medium",
+                "lg": "Large",
+                "xl": "Extra Large"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 1,
+            "ui": 1,
+            "ajax": 0,
+            "show_in_graphql": 1,
+            "graphql_description": "",
+            "graphql_field_name": "marginTop",
+            "graphql_non_null": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_66609dc8483a0",
+            "label": "Margin Bottom",
+            "name": "margin_bottom",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "xs": "Extra Small",
+                "sm": "Small",
+                "md": "Medium",
+                "lg": "Large",
+                "xl": "Extra Large"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 1,
+            "ui": 1,
+            "ajax": 0,
+            "show_in_graphql": 1,
+            "graphql_description": "",
+            "graphql_field_name": "marginBottom",
+            "graphql_non_null": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_66609e25483a2",
+            "label": "Margin Options",
+            "name": "margin_options",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_66609df1483a1",
+                "field_66609dc8483a0"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_668c1d9bf47cb",
+            "label": "CTA Styles",
+            "name": "pfc_cta_styles",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "cta-btn-white-transparent": "Button White Transparent",
+                "cta-btn-black-transparent": "Button Black Transparent",
+                "cta-btn-white": "Button White",
+                "cta-btn-yellow": "Button Yellow"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_66af8a917ae9f",
+            "label": "Sort",
+            "name": "posts_sort",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_66af8ac17aea0",
+                    "label": "Order",
+                    "name": "posts_order",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "asc": "Ascending",
+                        "desc": "Descending"
+                    },
+                    "default_value": "desc",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_66af8b257aea1",
+                    "label": "Order by",
+                    "name": "posts_order_by",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "date": "Date",
+                        "id": "ID",
+                        "name": "Name",
+                        "rand": "Random",
+                        "menu_order": "Menu order"
+                    },
+                    "default_value": "desc",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_66af8dfd1dfe6",
+            "label": "Component Title",
+            "name": "component_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Add a custom title to the component for oranising page layouts",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66c21dd8b2c38",
+            "label": "Justify Content",
+            "name": "justify_content",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "Left",
+                "center": "Center",
+                "right": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_66c21e54b2c39",
+            "label": "Align Items",
+            "name": "align_items",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "top": "Top",
+                "middle": "Middle",
+                "bottom": "Bottom"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_66c21f08b2c3a",
+            "label": "Alignment Options",
+            "name": "alignment_options",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_66c21dd8b2c38",
+                "field_66c21e54b2c39"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "show_in_graphql": 1,
+    "graphql_field_name": "reusableFields",
+    "map_graphql_types_from_location_rules": 0,
+    "graphql_types": "",
+    "modified": 1736727329
+}
