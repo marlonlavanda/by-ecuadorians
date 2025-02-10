@@ -8,10 +8,10 @@ import {
 /**
  * Fetch a page by slug.
  */
-export default async function getPageBySlug(slug: string) {
+export default async function getPageByURI(uri: string) {
   const query = `
-    query GetPageBySlug($slug: ID = "URI") {
-      page(id: $slug, idType: URI) {
+    query GetPageByURI($uri: ID = "URI") {
+      page(id: $uri, idType: URI) {
         databaseId
         content
         pageBuilderFields {
@@ -25,7 +25,7 @@ export default async function getPageBySlug(slug: string) {
   `;
 
   const variables = {
-    slug: slug,
+    uri: uri,
   };
 
   const response = await fetchGraphQL(query, variables);
