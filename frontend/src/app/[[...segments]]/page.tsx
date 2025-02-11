@@ -9,7 +9,8 @@ interface PageProps {
   };
 }
 
-export default async function Home({ params: { segments } }: PageProps) {
+export default async function Home({ params }: PageProps) {
+  const { segments } = await params;
   const segmentName = segments?.length ? segments?.join("/") : "/";
   console.log(segmentName);
   const page = await getPageByURI(segmentName);
