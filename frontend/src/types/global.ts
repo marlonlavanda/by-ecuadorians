@@ -1,4 +1,16 @@
+export interface GraphQLResponse<T = any> {
+  data?: T;
+  errors?: Array<{ message: string }>;
+}
+
 export type Sizing = "xs" | "sm" | "md" | "lg" | "xl";
+
+export type LayoutOptions = {
+  paddingTop?: Sizing;
+  paddingBottom?: Sizing;
+  marginTop?: Sizing;
+  marginBottom?: Sizing;
+};
 
 export type Node = {
   id: string;
@@ -13,6 +25,7 @@ export type UniformResourceIdentifiable = {
 export type ContentNode = Node &
   UniformResourceIdentifiable & {
     title: string;
+    slug: string;
     content: string;
     status: string;
   };

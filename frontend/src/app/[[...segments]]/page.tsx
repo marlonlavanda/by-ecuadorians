@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import getPageByURI from "@/lib/queries/getPageByURI";
+import getPageByURI from "@/graphql/queries/getPageByURI";
 import PageBuilder from "@/components/layouts/PageBuilder";
 
 interface PageProps {
@@ -9,17 +9,16 @@ interface PageProps {
   };
 }
 
-export default async function Home({ params }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const { segments } = await params;
   const segmentName = segments?.length ? segments?.join("/") : "/";
-  console.log(segmentName);
   const page = await getPageByURI(segmentName);
   if (!page) {
     notFound();
   }
 
   return (
-    <div className="hompage-template">
+    <div className={`${page.slug}-template`}>
       <PageBuilder layouts={page.pageBuilderFields?.layouts} />
     </div>
   );

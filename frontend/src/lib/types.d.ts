@@ -1,24 +1,3 @@
-export interface GraphQLResponse<T = any> {
-  data?: T;
-  errors?: Array<{ message: string }>;
-}
-
-export interface Menu {
-  menuItems: {
-    edges: [
-      {
-        node: {
-          target: string;
-          label: string;
-          databaseId: string;
-          uri: string;
-          cssClasses: Array<string>;
-        };
-      }
-    ];
-  };
-}
-
 export interface Page {
   author: {
     node: {

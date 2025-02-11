@@ -1,16 +1,16 @@
 import "./globals.css";
-import getMenuBySlug from "@/lib/queries/getMenuBySlug"
+import getMenuBySlug from "@/graphql/queries/getMenuBySlug";
 
 import Header from "@/components/ui/Header";
 import Fotoer from "@/components/ui/Footer";
-
 
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-    const menu = await getMenuBySlug('header-menu');
+  const menu = await getMenuBySlug("header-menu");
+  console.log(menu);
 
   return (
     <html lang="es">
