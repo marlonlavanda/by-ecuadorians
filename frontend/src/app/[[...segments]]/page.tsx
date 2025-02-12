@@ -4,14 +4,14 @@ import getPageByURI from "@/graphql/queries/getPageByURI";
 import PageBuilder from "@/components/layouts/PageBuilder";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     segments?: string[];
-  };
+  }>;
 }
 
 export default async function Page({ params }: PageProps) {
   const { segments } = await params;
-  const segmentName = segments?.length ? segments?.join("/") : "/";
+  const segmentName = segments?.length ? segments.join("/") : "/";
   const page = await getPageByURI(segmentName);
   if (!page) {
     notFound();

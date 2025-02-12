@@ -22,38 +22,52 @@ export const useMedia = () => {
       };
 
       // Update state only if it has changed
-      setMediaQuery((prev) =>
-        JSON.stringify(prev) !== JSON.stringify(newMediaQuery)
-          ? newMediaQuery
-          : prev
-      );
+      if (JSON.stringify(mediaQuery) !== JSON.stringify(newMediaQuery)) {
+        setMediaQuery(newMediaQuery);
+      }
     };
 
     // Initial state update
     handleMediaChange();
 
     // Add event listeners
-    mediaQueryMobile.addEventListener
-      ? mediaQueryMobile.addEventListener("change", handleMediaChange)
-      : mediaQueryMobile.addListener(handleMediaChange);
-    mediaQueryTablet.addEventListener
-      ? mediaQueryTablet.addEventListener("change", handleMediaChange)
-      : mediaQueryTablet.addListener(handleMediaChange);
-    mediaQueryDesktop.addEventListener
-      ? mediaQueryDesktop.addEventListener("change", handleMediaChange)
-      : mediaQueryDesktop.addListener(handleMediaChange);
+    if (mediaQueryMobile.addEventListener) {
+      mediaQueryMobile.addEventListener("change", handleMediaChange);
+    } else {
+      mediaQueryMobile.addListener(handleMediaChange);
+    }
+
+    if (mediaQueryTablet.addEventListener) {
+      mediaQueryTablet.addEventListener("change", handleMediaChange);
+    } else {
+      mediaQueryTablet.addListener(handleMediaChange);
+    }
+
+    if (mediaQueryDesktop.addEventListener) {
+      mediaQueryDesktop.addEventListener("change", handleMediaChange);
+    } else {
+      mediaQueryDesktop.addListener(handleMediaChange);
+    }
 
     // Cleanup event listeners
     return () => {
-      mediaQueryMobile.removeEventListener
-        ? mediaQueryMobile.removeEventListener("change", handleMediaChange)
-        : mediaQueryMobile.removeListener(handleMediaChange);
-      mediaQueryTablet.removeEventListener
-        ? mediaQueryTablet.removeEventListener("change", handleMediaChange)
-        : mediaQueryTablet.removeListener(handleMediaChange);
-      mediaQueryDesktop.removeEventListener
-        ? mediaQueryDesktop.removeEventListener("change", handleMediaChange)
-        : mediaQueryDesktop.removeListener(handleMediaChange);
+      if (mediaQueryMobile.removeEventListener) {
+        mediaQueryMobile.removeEventListener("change", handleMediaChange);
+      } else {
+        mediaQueryMobile.removeListener(handleMediaChange);
+      }
+
+      if (mediaQueryTablet.removeEventListener) {
+        mediaQueryTablet.removeEventListener("change", handleMediaChange);
+      } else {
+        mediaQueryTablet.removeListener(handleMediaChange);
+      }
+
+      if (mediaQueryDesktop.removeEventListener) {
+        mediaQueryDesktop.removeEventListener("change", handleMediaChange);
+      } else {
+        mediaQueryDesktop.removeListener(handleMediaChange);
+      }
     };
   }, []);
 
