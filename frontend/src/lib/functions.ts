@@ -3,9 +3,9 @@ import { GraphQLResponse } from "@/types/index";
 /**
  * Function to execute a GraphQL query.
  */
-export async function fetchGraphQL<T = any>(
+export async function fetchGraphQL<T = unknown>(
   query: string,
-  variables?: { [key: string]: any },
+  variables?: { [key: string]: unknown },
   preview = false,
   revalidate = 5
 ): Promise<GraphQLResponse<T>> {
@@ -51,18 +51,18 @@ export async function fetchGraphQL<T = any>(
     }
 
     // Read the response as JSON.
-    const data = await response.json();
+    const data: GraphQLResponse<T> = await response.json();
 
     // Throw an error if there was a GraphQL error.
-    if (data.errors) {
+    if (data.errors && data.errors.length > 0) {
       console.error("GraphQL Errors:", data.errors);
-      throw new Error("Error executing GraphQL query");
+      throw new Error(data.errors.map((error) => error.message).join(", "));
     }
 
     // Finally, return the data.
-    return data as GraphQLResponse<T>;
+    return data;
   } catch (error) {
-    console.error(error);
+    console.error("Error in fetchGraphQL:", error);
     throw error;
   }
 }

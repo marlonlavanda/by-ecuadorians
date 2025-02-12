@@ -31,7 +31,9 @@ export default async function getPageByURI(uri: string) {
     uri: uri,
   };
 
-  const response = await fetchGraphQL(query, variables);
+  const response = (await fetchGraphQL(query, variables)) as {
+    data: { page: Page };
+  };
 
   return response.data.page as Page;
 }

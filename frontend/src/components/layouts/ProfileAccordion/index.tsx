@@ -9,7 +9,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/Accordion";
-import { title } from "process";
 
 const profileData = [
   {
@@ -38,7 +37,7 @@ const profileData = [
 ];
 export default function ProfileAccordion() {
   const [coverImage, setCoverImage] = useState(profileData[0].coverImage);
-  const changeCoverImage = (id: number, image: string) => {
+  const changeCoverImage = (id: number) => {
     profileData.map((item) => {
       if (item.id === id) {
         setCoverImage(item.coverImage);
@@ -79,7 +78,7 @@ export default function ProfileAccordion() {
               {profileData.map((item) => (
                 <AccordionItem key={item.id} value={`item-${item.id}`}>
                   <AccordionTrigger
-                    onClick={() => changeCoverImage(item.id, item.coverImage)}
+                    onClick={() => changeCoverImage(item.id)}
                     className="text-xl md:text-2xl lg:text-3xl font-bold text-primary dark:text-gray-300 mb-1"
                   >
                     {item.title}

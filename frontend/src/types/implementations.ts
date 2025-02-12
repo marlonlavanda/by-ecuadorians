@@ -1,9 +1,23 @@
-import { Page, LayoutOptions, MediaItem } from "./index";
+import { Categories, LayoutOptions, MediaItem } from "./index";
+
+export type HighlightedPost = {
+  id: string;
+  databaseId: string;
+  slug: string;
+  uri: string;
+  content: string; // Assuming `RAW` format content is a string
+  excerpt: string;
+  title: string;
+  categories: Categories;
+  featuredImage: {
+    node: MediaItem;
+  };
+};
 
 export type BannerCarouselLayout = {
   fieldGroupName: string;
   highlightedPosts: {
-    nodes: Page[];
+    nodes: HighlightedPost[];
   };
 };
 
@@ -21,6 +35,7 @@ export type BiographyTab = {
 };
 
 export type BiographyTabsLayout = LayoutOptions & {
+  fieldGroupName: string;
   headingTitle?: string;
   headingSubtitle?: string;
   addTab: BiographyTab[];

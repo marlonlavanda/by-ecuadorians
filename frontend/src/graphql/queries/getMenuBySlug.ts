@@ -27,7 +27,9 @@ export default async function getMenuBySlug(slug: string) {
     slug: slug,
   };
 
-  const response = await fetchGraphQL(query, variables);
+  const response = (await fetchGraphQL(query, variables)) as {
+    data: { menu: Menu };
+  };
 
   return response.data.menu as Menu;
 }

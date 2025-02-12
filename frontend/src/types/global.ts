@@ -1,4 +1,4 @@
-export interface GraphQLResponse<T = any> {
+export interface GraphQLResponse<T = unknown> {
   data?: T;
   errors?: Array<{ message: string }>;
 }
@@ -10,6 +10,16 @@ export type LayoutOptions = {
   paddingBottom?: Sizing;
   marginTop?: Sizing;
   marginBottom?: Sizing;
+};
+
+export type Category = {
+  databaseId: string;
+  name: string;
+  slug: string;
+};
+
+export type Categories = {
+  nodes: Category[];
 };
 
 export type Node = {
@@ -33,6 +43,7 @@ export type ContentNode = Node &
 // Define the MediaItem type
 export type MediaItem = {
   id: string;
+  databaseId: number;
   sourceUrl: string;
   altText: string;
   title: string;
