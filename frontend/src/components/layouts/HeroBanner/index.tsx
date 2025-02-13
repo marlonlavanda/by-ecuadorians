@@ -20,7 +20,7 @@ const heroBanerStyles = cva(
 );
 const detailsStyles = cva("absolute z-10 bottom-[40px] left-[40px] right-0 ");
 
-export default function PersonHeroBanner({
+export default function HeroBanner({
   title,
   featuredImage,
   categories,

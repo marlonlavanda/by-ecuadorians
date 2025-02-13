@@ -86,7 +86,7 @@
             },
             "min": "",
             "max": "",
-            "button_label": "Add Row",
+            "button_label": "Add Layout",
             "show_in_graphql": 1,
             "graphql_description": "",
             "graphql_field_name": "layouts",
@@ -136,5 +136,5 @@
     "graphql_field_name": "PageBuilderFields",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1735862206
+    "modified": 1739368486
 }

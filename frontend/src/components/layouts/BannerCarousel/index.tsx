@@ -13,13 +13,7 @@ import {
 } from "@/components/ui/Carousel";
 
 import { AspectRatio } from "@/components/ui/AspectRatio";
-import { HighlightedPost } from "@/lib/types";
-
-type BannerCarouselProps = {
-  highlightedPosts: {
-    nodes: Array<HighlightedPost>;
-  };
-};
+import { BannerCarouselProps } from "./BannerCarousel.types";
 
 export const BannerCarousel = ({ highlightedPosts }: BannerCarouselProps) => {
   return (
@@ -55,7 +49,7 @@ export const BannerCarousel = ({ highlightedPosts }: BannerCarouselProps) => {
                         {banner.categories.nodes[0].name}
                       </h6>
                     )}
-                    <Link href={banner.uri}>
+                    <Link href={`/ecuadorians/profile/${banner.slug}`}>
                       <h2>{banner.title}</h2>
                     </Link>
                     {banner.excerpt && (
