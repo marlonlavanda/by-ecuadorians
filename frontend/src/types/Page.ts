@@ -1,16 +1,16 @@
 import {
   Node,
   ContentNode,
-  NodeWithFeaturedImage,
   HierarchicalContentNode,
   NodeWithPageBuilderFields,
+  NodeWidthSEO,
 } from "./index";
 
 export type Page = Node &
   ContentNode &
-  NodeWithFeaturedImage &
   NodeWithPageBuilderFields &
-  HierarchicalContentNode & {
+  HierarchicalContentNode &
+  NodeWidthSEO & {
     parent: Page;
     children: Page[];
   };

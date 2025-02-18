@@ -12,6 +12,14 @@ export type LayoutOptions = {
   marginBottom?: Sizing;
 };
 
+export type NodeWidthSEO = {
+  seo?: {
+    title: string;
+    description: string;
+    fullHead: string;
+  };
+};
+
 export type Category = {
   databaseId: string;
   name: string;
@@ -42,13 +50,13 @@ export type ContentNode = Node &
 
 // Define the MediaItem type
 export type MediaItem = {
-  id: string;
+  id?: string;
   databaseId: number;
   sourceUrl: string;
   altText: string;
-  title: string;
-  caption: string;
-  description: string;
+  title?: string;
+  caption?: string;
+  description?: string;
 };
 
 // Define the TermNode type

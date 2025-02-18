@@ -1,29 +1,4 @@
-export const ECUADORIAN_FRAGMENT = `
-  fragment EcuadorianFragment on Ecuadorian {
-    id
-    content(format: RAW)
-    databaseId
-    excerpt
-    title
-    slug
-    uri
-    categories {
-      nodes {
-        databaseId
-        name
-        slug
-      }
-    }
-    featuredImage {
-      node {
-        databaseId
-        sourceUrl
-        uri
-        altText
-      }
-    }
-  }
-`;
+import { ECUADORIAN_FRAGMENT } from "./profile";
 
 export const BANNER_CAROUSEL_FRAGMENT = `
   fragment BannerCarouselFragment on PageBuilderFieldsLayoutsBannerCarouselLayout {

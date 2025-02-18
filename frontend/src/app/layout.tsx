@@ -10,7 +10,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const menu = await getMenuBySlug("header-menu");
-  console.log(menu);
 
   return (
     <html lang="es">

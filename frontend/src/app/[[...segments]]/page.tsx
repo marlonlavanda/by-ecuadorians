@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 import getPageByURI from "@/graphql/queries/getPageByURI";
 import PageBuilder from "@/components/layouts/PageBuilder";
-
+import SummaryCollectionGrid from "@/components/layouts/SummaryCollectionGrid";
 interface PageProps {
   params: Promise<{
     segments?: string[];
@@ -20,6 +20,7 @@ export default async function Page({ params }: PageProps) {
   return (
     <div className={`${page.slug}-template`}>
       <PageBuilder layouts={page.pageBuilderFields?.layouts} />
+      <SummaryCollectionGrid />
     </div>
   );
 }
