@@ -4,15 +4,15 @@ import { Card, CardContent } from "@/components/ui/Card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/Tabs";
 import { Separator } from "@/components/ui/Separator";
 import { AspectRatio } from "@/components/ui/AspectRatio";
-import { BiographyTabsFragment } from "@/lib/types";
+import { BiographyTabsLayout } from "@/types";
 import { cn } from "@/lib/utils";
 
-type PersonTabDetailsProps = BiographyTabsFragment;
+type PersonTabDetailsProps = BiographyTabsLayout;
 
 const TabContent = ({
   tabContent,
 }: {
-  tabContent: BiographyTabsFragment["addTab"][0]["tabContent"];
+  tabContent: BiographyTabsLayout["addTab"][0]["tabContent"];
 }) => (
   <>
     {tabContent.map((item, index) => (
@@ -23,9 +23,9 @@ const TabContent = ({
         <div className="w-1/2">
           <AspectRatio ratio={16 / 9}>
             <Image
-              src={item.image.node.sourceUrl}
-              alt={item.image.node.altText}
               fill
+              src={item?.image?.node?.sourceUrl}
+              alt={item?.image?.node?.altText}
               className="object-cover object-top"
             />
           </AspectRatio>
@@ -33,7 +33,7 @@ const TabContent = ({
         <div className="w-1/2">
           <div
             className="wysiwyg"
-            dangerouslySetInnerHTML={{ __html: item.content }}
+            dangerouslySetInnerHTML={{ __html: item?.content }}
           ></div>
         </div>
       </div>

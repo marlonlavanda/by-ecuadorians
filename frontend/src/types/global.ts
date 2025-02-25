@@ -6,10 +6,10 @@ export interface GraphQLResponse<T = unknown> {
 export type Sizing = "xs" | "sm" | "md" | "lg" | "xl";
 
 export type LayoutOptions = {
-  paddingTop?: Sizing;
-  paddingBottom?: Sizing;
-  marginTop?: Sizing;
-  marginBottom?: Sizing;
+  paddingTop?: Sizing[];
+  paddingBottom?: Sizing[];
+  marginTop?: Sizing[];
+  marginBottom?: Sizing[];
 };
 
 export type NodeWidthSEO = {

@@ -1,11 +1,7 @@
 import { fetchGraphQL } from "@/lib/functions";
 import { Page } from "@/types";
 
-import {
-  PAGE_BUILDER_FIELDS_FRAGMENT,
-  BANNER_CAROUSEL_FRAGMENT,
-  BIOGRAPHY_TAB_FRAGMENT,
-} from "@/graphql/fragments";
+import { PAGE_BUILDER_FIELDS_FRAGMENT } from "@/graphql/fragments";
 /**
  * Fetch a page by slug.
  */
@@ -23,8 +19,6 @@ export default async function getPageByURI(uri: string) {
       }
     }
     ${PAGE_BUILDER_FIELDS_FRAGMENT}
-    ${BANNER_CAROUSEL_FRAGMENT}
-    ${BIOGRAPHY_TAB_FRAGMENT}
   `;
 
   const variables = {

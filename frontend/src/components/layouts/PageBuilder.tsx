@@ -1,9 +1,17 @@
 import { JSX } from "react";
 import { BannerCarousel } from "./BannerCarousel";
-import { PersonTabDetails } from "@/components/layouts/PersonTabDetails";
-import { BannerCarouselLayout, BiographyTabsLayout } from "@/types";
+import { PersonTabDetails } from "./PersonTabDetails";
+import { SummaryCollectionGrid } from "./SummaryCollectionGrid";
+import {
+  BannerCarouselLayout,
+  BiographyTabsLayout,
+  SummaryCollectionLayout,
+} from "@/types";
 
-type Layout = BannerCarouselLayout | BiographyTabsLayout;
+type Layout =
+  | BannerCarouselLayout
+  | BiographyTabsLayout
+  | SummaryCollectionLayout;
 
 // Define the props for the PageBuilder component.
 interface PageBuilderProps {
@@ -25,6 +33,7 @@ const renderBiographyTabs = (
 ): JSX.Element => (
   <PersonTabDetails
     key={index}
+    fieldGroupName={layout.fieldGroupName}
     headingTitle={layout.headingTitle}
     headingSubtitle={layout.headingSubtitle}
     addTab={layout.addTab}
@@ -32,6 +41,19 @@ const renderBiographyTabs = (
     paddingTop={layout.paddingTop}
     marginBottom={layout.marginBottom}
     marginTop={layout.marginTop}
+  />
+);
+
+const renderSummaryCollection = (
+  layout: SummaryCollectionLayout,
+  index: number
+): JSX.Element => (
+  <SummaryCollectionGrid
+    key={index}
+    fieldGroupName={layout.fieldGroupName}
+    headingTitle={layout.headingTitle}
+    headingSubtitle={layout.headingSubtitle}
+    items={layout.items}
   />
 );
 
@@ -44,6 +66,8 @@ const layoutRenderers: Record<
     renderBannerCarousel(layout as BannerCarouselLayout, index),
   PageBuilderFieldsLayoutsBiographyTabsLayout: (layout, index) =>
     renderBiographyTabs(layout as BiographyTabsLayout, index),
+  PageBuilderFieldsLayoutsSummaryCollectionLayout: (layout, index) =>
+    renderSummaryCollection(layout as SummaryCollectionLayout, index),
   // ...add new layout renderers here...
 };
 

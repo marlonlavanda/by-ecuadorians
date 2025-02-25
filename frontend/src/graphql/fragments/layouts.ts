@@ -1,7 +1,9 @@
 import { ECUADORIAN_FRAGMENT } from "./profile";
+import { POST_FRAGMENT } from "./post";
 
 export const BANNER_CAROUSEL_FRAGMENT = `
   fragment BannerCarouselFragment on PageBuilderFieldsLayoutsBannerCarouselLayout {
+    fieldGroupName
     highlightedPosts {
       nodes {
         databaseId
@@ -13,7 +15,6 @@ export const BANNER_CAROUSEL_FRAGMENT = `
       }
     }
   }
-  ${ECUADORIAN_FRAGMENT}
 `;
 
 /*
@@ -23,6 +24,7 @@ export const BANNER_CAROUSEL_FRAGMENT = `
 
 export const BIOGRAPHY_TAB_FRAGMENT = `
   fragment BiographyTabFragment on PageBuilderFieldsLayoutsBiographyTabsLayout {
+    fieldGroupName
     headingTitle
     headingSubtitle
     addTab {
@@ -45,6 +47,32 @@ export const BIOGRAPHY_TAB_FRAGMENT = `
   }
 `;
 
+export const SUMMARY_COLLECTION_FRAGMENT = `
+  fragment SummaryCollectionFragment on PageBuilderFieldsLayoutsSummaryCollectionLayout {
+    fieldGroupName
+    headingSubtitle
+    headingTitle
+    marginBottom
+    marginTop
+    paddingBottom
+    paddingTop
+    items {
+      nodes {
+        databaseId
+        slug
+        uri
+        ... on Post {
+          ...PostFragment
+        }
+        ... on Ecuadorian {
+          ...EcuadorianFragment
+        }
+      }
+    }
+  }
+  ${POST_FRAGMENT}
+`;
+
 export const PAGE_BUILDER_FIELDS_FRAGMENT = `
   fragment PageBuilderFieldsFragment on PageBuilderFields {
     layouts {
@@ -55,6 +83,13 @@ export const PAGE_BUILDER_FIELDS_FRAGMENT = `
       ... on PageBuilderFieldsLayoutsBiographyTabsLayout {
         ...BiographyTabFragment
       }
+      ... on PageBuilderFieldsLayoutsSummaryCollectionLayout {
+        ...SummaryCollectionFragment
+      }
     }
   }
+  ${BANNER_CAROUSEL_FRAGMENT}
+  ${BIOGRAPHY_TAB_FRAGMENT}
+  ${SUMMARY_COLLECTION_FRAGMENT}
+  ${ECUADORIAN_FRAGMENT}
 `;

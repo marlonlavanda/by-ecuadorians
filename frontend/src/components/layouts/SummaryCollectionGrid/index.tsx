@@ -1,11 +1,6 @@
-import {
-  Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
-  CardDescription,
-  CardContent,
-} from "@/components/ui/Card";
+import { Separator } from "@/components/ui/Separator";
+import SummaryItem from "@/components/ui/SummaryItem";
+import { SummaryCollectionProps } from "./SummaryCollectionGrid.types";
 
 const collection = [
   {
@@ -43,27 +38,28 @@ const collection = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCzoxouU7Y-PCj5GGO9DOUnSyvs3NYaU8TjA&s",
   },
 ];
-export default function SummaryCollectionGrid() {
+
+export const SummaryCollectionGrid = ({
+  headingTitle,
+  headingSubtitle,
+  items,
+}: SummaryCollectionProps) => {
   return (
-    <div className="section">
+    <div className="section mt-8">
       <div className="container">
-        <h1 className="text-3xl">Summary Collection Grid</h1>
-        <div className="grid 2xl:grid-cols-4 xl:grid-cols-2 gap-6">
-          {collection.map((item) => (
-            <Card key={item.id} className="border-none shadow-none">
-              <CardContent className="p-0">
-                <div>
-                  <img src={item.coverImage} alt={item.title} />
-                </div>
-                <div>
-                  <CardTitle>{item.title}</CardTitle>
-                  <CardDescription>{item.excerpt}</CardDescription>
-                </div>
-              </CardContent>
-            </Card>
+        <div className="space-y-1">
+          <h3 className="tracking-tight mb-0">{headingTitle}</h3>
+          {headingSubtitle && (
+            <p className="text-sm text-muted-foreground">{headingSubtitle} </p>
+          )}
+        </div>
+        <Separator className="my-6" />
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4  gap-6">
+          {items.nodes.map((item) => (
+            <SummaryItem key={item.id} item={item} />
           ))}
         </div>
       </div>
     </div>
   );
-}
+};

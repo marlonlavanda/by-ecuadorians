@@ -18,7 +18,7 @@ import { BannerCarouselProps } from "./BannerCarousel.types";
 export const BannerCarousel = ({ highlightedPosts }: BannerCarouselProps) => {
   return (
     <div className="section">
-      <div className="container overflow-hidden">
+      <div className="container w-full overflow-hidden">
         <Carousel
           opts={{
             loop: true,

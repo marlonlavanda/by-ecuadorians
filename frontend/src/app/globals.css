@@ -110,6 +110,11 @@ body {
     }
   }
 }
+
+@theme {
+  --breakpoint-2xl: 91.875rem;
+}
+
 /** Padding Bottom */
 .pad-top-xs {
   @apply pt-2.5;

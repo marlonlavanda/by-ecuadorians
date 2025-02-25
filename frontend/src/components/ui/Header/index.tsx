@@ -25,7 +25,9 @@ export default function Header({ menu }: { menu: Menu }) {
     <header className={cn("header__section", headerSectionStyles())}>
       <div className={cn("header__container", headerContainerStyles())}>
         <div className="text-2xl lowercase">
-          by <span className="font-bold">ecuadorians</span>
+          <Link href="/">
+            by <span className="font-bold">ecuadorians</span>
+          </Link>
         </div>
         {isDesktop && (
           <NavigationMenu>

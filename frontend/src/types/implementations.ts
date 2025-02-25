@@ -40,3 +40,20 @@ export type BiographyTabsLayout = LayoutOptions & {
   headingSubtitle?: string;
   addTab: BiographyTab[];
 };
+
+export type SummaryItem = {
+  id: number;
+  title: string;
+  excerpt: string;
+  featuredImage: {
+    node: MediaItem;
+  };
+};
+export type SummaryCollectionLayout = LayoutOptions & {
+  fieldGroupName: string;
+  headingTitle?: string;
+  headingSubtitle?: string;
+  items: {
+    nodes: SummaryItem[];
+  };
+};
