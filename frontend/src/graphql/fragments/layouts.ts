@@ -61,6 +61,7 @@ export const SUMMARY_COLLECTION_FRAGMENT = `
         databaseId
         slug
         uri
+        contentTypeName
         ... on Post {
           ...PostFragment
         }

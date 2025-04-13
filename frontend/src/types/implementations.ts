@@ -44,7 +44,9 @@ export type BiographyTabsLayout = LayoutOptions & {
 export type SummaryItem = {
   id: number;
   title: string;
+  slug: string;
   excerpt: string;
+  contentTypeName: string;
   featuredImage: {
     node: MediaItem;
   };

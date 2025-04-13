@@ -1,10 +1,6 @@
 import { fetchGraphQL } from "@/lib/functions";
 import { Ecuadorian } from "@/types";
-import {
-  PAGE_BUILDER_FIELDS_FRAGMENT,
-  BANNER_CAROUSEL_FRAGMENT,
-  BIOGRAPHY_TAB_FRAGMENT,
-} from "@/graphql/fragments";
+import { PAGE_BUILDER_FIELDS_FRAGMENT } from "@/graphql/fragments";
 
 /**
  * Fetch a page by slug.
@@ -38,8 +34,6 @@ export default async function getProfileBySlug(slug: string) {
       }
     }
     ${PAGE_BUILDER_FIELDS_FRAGMENT}
-    ${BANNER_CAROUSEL_FRAGMENT}
-    ${BIOGRAPHY_TAB_FRAGMENT}
   `;
 
   const variables = {
